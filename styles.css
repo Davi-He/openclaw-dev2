@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #444;
+    font-size: 2.5em;
+}
+
+.countdown-display {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-unit span {
+    display: block;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.time-unit small {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.controls label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.controls input, .controls button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.controls input {
+    width: 150px;
+}
+
+.controls button {
+    background: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls button:hover {
+    background: #5a6fd8;
+}
+
+.event-name {
+    margin: 20px 0;
+}
+
+.event-name input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.event-title {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #667eea;
+    min-height: 30px;
+}
+
+@media (max-width: 600px) {
+    .time-unit {
+        min-width: 60px;
+        padding: 15px;
+    }
+    
+    .time-unit span {
+        font-size: 2em;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+}
