@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>许愿墙 - 简约现代风</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>✨ 许愿墙</h1>
+            <p>分享你的愿望，获得大家的支持</p>
+        </header>
+
+        <main class="main-content">
+            <!-- 许愿表单 -->
+            <section class="wish-form-section">
+                <div class="form-wrapper">
+                    <textarea 
+                        id="wishInput" 
+                        placeholder="写下你的心愿..." 
+                        maxlength="500"
+                    ></textarea>
+                    <div class="form-footer">
+                        <span id="charCount">0/500</span>
+                        <button id="submitWish" class="submit-btn">许愿 ✨</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 愿望列表 -->
+            <section class="wishes-section">
+                <h2>大家的愿望</h2>
+                <div id="wishesContainer" class="wishes-container">
+                    <!-- 愿望卡片将在这里动态加载 -->
+                    <div class="loading">加载中...</div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 许愿墙 - 愿所有美好都能实现</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

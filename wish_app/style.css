@@ -1,0 +1,296 @@
+/* 现代简约风格的CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #4a6fa5;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* 表单区域 */
+.wish-form-section {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.form-wrapper textarea {
+    width: 100%;
+    height: 120px;
+    padding: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.form-wrapper textarea:focus {
+    outline: none;
+    border-color: #4a6fa5;
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.1);
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+#charCount {
+    color: #999;
+    font-size: 14px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #4a6fa5 0%, #6b8cbc 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 111, 165, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 愿望列表 */
+.wishes-section h2 {
+    font-size: 1.8rem;
+    color: #4a6fa5;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.wishes-container {
+    display: grid;
+    gap: 20px;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 18px;
+}
+
+.wish-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(31, 38, 135, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wish-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a6fa5, #6b8cbc);
+    opacity: 0.8;
+}
+
+.wish-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(31, 38, 135, 0.15);
+}
+
+.wish-content {
+    margin-bottom: 16px;
+    line-height: 1.7;
+    color: #444;
+    font-size: 16px;
+}
+
+.wish-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
+    color: #888;
+    font-size: 14px;
+}
+
+.like-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.like-btn {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.like-btn:hover {
+    background: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.like-btn.liked {
+    background: #fff3cd;
+    border-color: #ffeaa7;
+    color: #856404;
+}
+
+.like-btn.liked:hover {
+    background: #ffeaa7;
+    border-color: #ffd479;
+}
+
+.like-icon {
+    font-size: 16px;
+}
+
+.like-count {
+    font-weight: 500;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .wish-form-section {
+        padding: 20px;
+    }
+    
+    .form-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+    
+    .wish-card {
+        padding: 20px;
+    }
+    
+    .wish-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .like-section {
+        align-self: flex-end;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wish-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* 错误提示 */
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.success-message {
+    color: #28a745;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 16px 0;
+    text-align: center;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
