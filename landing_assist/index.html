@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空中自动驾驶辅助降落系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 空中自动驾驶辅助降落系统</h1>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-label">高度:</span>
+                    <span id="altitude" class="status-value">120m</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">速度:</span>
+                    <span id="speed" class="status-value">5.2 m/s</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">电池:</span>
+                    <span id="battery" class="status-value">85%</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">状态:</span>
+                    <span id="flight-status" class="status-value status-active">飞行中</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- 摄像头视图区域 -->
+            <section class="camera-view-section">
+                <h2>📷 下视摄像头实时视图</h2>
+                <div class="camera-container">
+                    <div id="camera-overlay" class="camera-overlay">
+                        <div id="grid-overlay" class="grid-overlay"></div>
+                        <div id="landing-target" class="landing-target hidden">
+                            <div class="target-circle"></div>
+                            <div class="target-crosshair"></div>
+                            <div class="target-info">
+                                <div class="target-coords" id="target-coords">点击选择降落点</div>
+                                <div class="target-distance" id="target-distance">距离: --m</div>
+                            </div>
+                        </div>
+                        <div id="current-position" class="current-position">
+                            <div class="position-indicator"></div>
+                        </div>
+                    </div>
+                    <canvas id="cameraCanvas" width="800" height="600"></canvas>
+                </div>
+            </section>
+
+            <!-- 控制面板 -->
+            <section class="control-panel">
+                <div class="panel-header">
+                    <h3>🎛️ 控制面板</h3>
+                </div>
+                <div class="control-buttons">
+                    <button id="takeoff-btn" class="control-btn btn-takeoff">起飞</button>
+                    <button id="land-btn" class="control-btn btn-land" disabled>自动降落</button>
+                    <button id="cancel-btn" class="control-btn btn-cancel" disabled>取消</button>
+                    <button id="manual-btn" class="control-btn btn-manual">手动模式</button>
+                </div>
+                <div class="landing-options">
+                    <div class="option-group">
+                        <label>
+                            <input type="radio" name="landing-mode" value="precision" checked> 精准降落
+                        </label>
+                        <label>
+                            <input type="radio" name="landing-mode" value="emergency"> 紧急降落
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="obstacle-check"> 障碍物检测
+                        </label>
+                        <label>
+                            <input type="checkbox" id="ground-check" checked> 地面类型检测
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 降落信息面板 -->
+            <section class="landing-info">
+                <h3>📊 降落信息</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">目标坐标</div>
+                        <div id="info-coords" class="info-value">--</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">预计到达时间</div>
+                        <div id="info-eta" class="info-value">--</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">下降速率</div>
+                        <div id="info-descent" class="info-value">0.5 m/s</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">安全等级</div>
+                        <div id="info-safety" class="info-value safety-high">高</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>✈️ 空中自动驾驶辅助降落系统 | 点击摄像头视图选择降落位置</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
