@@ -29,3 +29,7 @@
 - `index.html` - 主页面
 - `styles.css` - 样式文件
 - `script.js` - JavaScript逻辑-dev2
+
+## 开发说明
+
+- 本次更新用于测试通过 MCP 自动创建 PR（2026-02-08）。
